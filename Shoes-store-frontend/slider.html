@@ -1,14 +1,15 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="h-full">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg" href="./public/icon/Untitled-1 (1).svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shoea</title>
   </head>
-  <body class="h-full">
+  <body class="h-full font-inter">
     <div
       id="controls-carousel"
-      class="relative w-full h-3/4"
+      class="relative h-4/6 w-full"
       data-carousel="static"
     >
       <!-- Carousel wrapper -->
@@ -17,7 +18,7 @@
         <div class="hidden duration-700 ease-in-out" data-carousel-item>
           <img
             src="/download.jpg"
-            class="absolute block w-full h-full -translate-x-1/2 left-1/2"
+            class="absolute left-1/2 block h-full w-full -translate-x-1/2"
             alt="..."
           />
         </div>
@@ -28,7 +29,7 @@
         >
           <img
             src="/Jordan.jpg"
-            class="absolute block w-full h-full -translate-x-1/2 left-1/2"
+            class="absolute left-1/2 block h-full w-full -translate-x-1/2"
             alt="..."
           />
         </div>
@@ -36,7 +37,7 @@
         <div class="hidden duration-700 ease-in-out" data-carousel-item>
           <img
             src="/Sweetsoles.jpg"
-            class="absolute block w-full h-full -translate-x-1/2 left-1/2"
+            class="absolute left-1/2 block h-full w-full -translate-x-1/2"
             alt="..."
           />
         </div>
@@ -45,14 +46,14 @@
       <button
         type="button"
         id="nextSlide"
-        class="absolute top-0 end-0 z-30 items-center justify-center h-full px-4 cursor-pointer group focus:outline-none hidden"
+        class="group absolute end-0 top-0 z-30 hidden h-full cursor-pointer items-center justify-center px-4 focus:outline-none"
         data-carousel-next
       >
         <span
-          class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+          class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/30"
         >
           <svg
-            class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
+            class="h-4 w-4 text-white rtl:rotate-180 dark:text-gray-800"
             aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -70,16 +71,16 @@
         </span>
       </button>
     </div>
-    <div class="px-2 pt-4 pb-8">
+    <div class="px-2 pb-[8%] pt-[8%]">
       <p
-        class="text-2xl font-semibold text-center text-gray-800"
+        class="text-center text-2xl font-semibold text-gray-800"
         id="message"
       ></p>
     </div>
-    <div class="w-full flex justify-center gap-3" id="slideIndicators"></div>
-    <div class="w-full flex justify-center pt-6">
+    <div class="flex w-full justify-center gap-3" id="slideIndicators"></div>
+    <div class="flex w-full justify-center pt-[8%]">
       <button
-        class="bg-gray-900 text-white w-11/12 py-1 rounded-3xl"
+        class="w-11/12 rounded-3xl bg-gray-900 py-1 text-white"
         id="nextBtn"
       >
         NEXT
