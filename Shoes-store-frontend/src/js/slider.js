@@ -1,3 +1,4 @@
+"use strict";
 const nextSlideElem = document.getElementById("nextSlide");
 const nextBtn = document.getElementById("nextBtn");
 const messageElem = document.getElementById("message");
@@ -30,13 +31,13 @@ const showMessage = () => {
     nextBtn.innerText = "Get Started";
   }
   if (index > message.length) {
-    location.href = "/signup";
+    location.href = "/login";
     return;
   }
+  nextSlideElem.click();
 };
 
 nextBtn.addEventListener("click", () => {
-  nextSlideElem.click();
   showMessage();
 });
 
