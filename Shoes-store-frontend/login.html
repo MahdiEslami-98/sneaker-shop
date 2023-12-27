@@ -1,1 +1,73 @@
+<!doctype html>
+<html lang="en" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg" href="./public/icon/Untitled-1 (1).svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Log in</title>
+  </head>
+  <body class="h-full w-screen font-inter">
+    <div
+      id="alert"
+      class="absolute -top-96 left-1/2 mb-4 w-4/5 -translate-x-1/2 rounded-lg bg-red-50 p-4 text-sm text-red-800 transition-all"
+      role="alert"
+    ></div>
+    <div class="container mx-auto">
+      <div class="w-full pl-6 pt-3">
+        <div class="h-8 w-8 cursor-pointer" id="backBtn">
+          <img src="./icon/arrow-left-short.svg" alt="" />
+        </div>
+      </div>
+      <div class="mx-auto mb-20 mt-12 h-20 w-14">
+        <img src="./logo.svg" alt="" class="h-full w-full" />
+      </div>
+      <p class="text-center text-3xl font-semibold">Log in</p>
+      <form class="flex w-full flex-col px-6" id="form">
+        <div class="mt-4 flex w-full items-center rounded-sm bg-gray-200">
+          <label for="user_name_input" class="pl-3">
+            <img src="./icon/person-outline.svg" alt="" class="w-4" />
+          </label>
+          <input
+            type="text"
+            class="w-full bg-inherit px-4 py-2 outline-none"
+            placeholder="Username"
+            id="user_name_input"
+            name="username"
+          />
+        </div>
+        <div class="mt-4 flex w-full items-center rounded-sm bg-gray-200">
+          <label for="pass_input" class="pl-3">
+            <img src="./icon/lock-closed-outline.svg" alt="" class="w-4" />
+          </label>
+          <input
+            type="password"
+            class="w-full bg-inherit px-4 py-2 outline-none"
+            placeholder="Password"
+            id="pass_input"
+            name="password"
+          />
+          <div class="pr-3">
+            <img
+              src="./icon/eye-off-outline.svg"
+              alt=""
+              class="w-4"
+              id="show_pass"
+            />
+          </div>
+        </div>
+        <button
+          type="submit"
+          class="absolute bottom-4 left-1/2 w-[90%] -translate-x-1/2 rounded-3xl bg-black py-2 text-center font-medium text-white"
+        >
+          Log in
+        </button>
+      </form>
+      <div class="mt-6 flex w-full items-center justify-center">
+        <p class="cursor-pointer text-xl font-medium" id="signup">Sign up</p>
+      </div>
+    </div>
 
+    <script type="module" src="./src/js/main.js"></script>
+    <script type="module" src="./src/js/login.js"></script>
+  </body>
+</html>
