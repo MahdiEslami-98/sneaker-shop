@@ -10,6 +10,9 @@ export default {
       backgroundImage: {
         hero: "url('/AirJordans.jpg')",
       },
+      fontFamily: {
+        inter: ["Inter"],
+      },
     },
     plugins: [require("flowbite/plugin")],
   },

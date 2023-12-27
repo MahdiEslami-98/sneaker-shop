@@ -1,8 +1,9 @@
 import { defineConfig } from "vite";
+import injectHTML from "vite-plugin-html-inject";
 import { resolve } from "path";
 
 export default defineConfig({
-  plugins: [],
+  plugins: [injectHTML()],
   build: {
     rollupOptions: {
       input: {
@@ -10,7 +11,9 @@ export default defineConfig({
         slider: resolve(__dirname, "slider.html"),
         signup: resolve(__dirname, "signup.html"),
         login: resolve(__dirname, "login.html"),
-        firstPage: resolve(__dirname, "firstPage.html"),
+        products: resolve(__dirname, "products.html"),
+        product: resolve(__dirname, "product.html"),
+        search: resolve(__dirname, "search.html"),
       },
     },
   },
