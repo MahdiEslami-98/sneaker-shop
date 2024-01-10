@@ -26,7 +26,7 @@ const showSearchResult = async (e) => {
   if (searchResult.data.data.length >= 2) index = 2;
   for (let i = 0; i < index; i++) {
     showResElem.innerHTML += `
-    <div class="mb-2 flex items-center bg-[f3f3f3] rounded border" data-search-id="${searchResult.data.data[i].id}">
+    <div class="mb-2 flex shadow items-center bg-[f3f3f3] rounded border" data-search-id="${searchResult.data.data[i].id}">
       <div class="flex h-full w-1/2 justify-center">
         <img src="${searchResult.data.data[i].imageURL}" alt="" class="h-20 w-20" />
       </div>
