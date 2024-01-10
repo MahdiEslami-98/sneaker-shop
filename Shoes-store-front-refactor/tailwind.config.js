@@ -6,7 +6,14 @@ export default {
     "./node_modules/flowbite/**/*.js",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ["Inter", "sans-serif"],
+      },
+      backgroundImage: {
+        hero: "url('/AirJordans.jpg')",
+      },
+    },
   },
   plugins: [require("flowbite/plugin")],
 };

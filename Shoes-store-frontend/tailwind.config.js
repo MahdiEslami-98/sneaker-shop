@@ -11,7 +11,7 @@ export default {
         hero: "url('/AirJordans.jpg')",
       },
       fontFamily: {
-        inter: ["Inter"],
+        inter: ["Inter", "sans-serif"],
       },
     },
     plugins: [require("flowbite/plugin")],
