@@ -1,24 +1,49 @@
 import axios, { AxiosError } from "axios";
-import errorHandler from "./errorHandler";
+import { errorHandler, showAlert } from "./errorHandler";
+import { serverUrl } from "./urls";
+
+interface IAuthResponse {
+  user: {
+    username: string;
+    id: number;
+  };
+  token: string;
+}
+
+interface IAuthBody {
+  username: string;
+  password: string;
+}
 
 const AxiosInstance = axios.create({
-  baseURL: "http://localhost:3000",
+  baseURL: serverUrl,
 });
 
 export const getData = async (url: string) => {
   try {
-    const response = await AxiosInstance.get(url);
+    const token = sessionStorage.getItem("token");
+    const response = await AxiosInstance.get(url, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
     return response;
   } catch (e) {
     const html = errorHandler(e as AxiosError);
   }
 };
 
-export const postData = async (url: string, data: any) => {
+type PostDataType = (
+  url: string,
+  data: IAuthBody,
+  el: HTMLElement,
+) => Promise<IAuthResponse>;
+export const postData: PostDataType = async (url, data, el) => {
   try {
     const response = await AxiosInstance.post(url, data);
-    return response;
+    sessionStorage.setItem("token", response.data.token);
+    return response.data;
   } catch (e) {
     const html = errorHandler(e as AxiosError);
+    if (!html) return;
+    showAlert(el, html);
   }
 };

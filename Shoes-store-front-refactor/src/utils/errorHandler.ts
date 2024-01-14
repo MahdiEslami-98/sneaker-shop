@@ -8,7 +8,7 @@ type ResponseType = {
   status: number;
 };
 
-const errorHandler = (e: AxiosError) => {
+export const errorHandler = (e: AxiosError) => {
   if (!e.response) return;
   const er = e.response as ResponseType;
   if (er.status === 403) {
@@ -27,4 +27,15 @@ const errorHandler = (e: AxiosError) => {
   }
 };
 
-export default errorHandler;
+type ShowAlertType = (el: HTMLElement, message: string) => void;
+export const showAlert: ShowAlertType = (el, message) => {
+  el.innerHTML = message;
+  el.classList.remove("-top-96");
+  el.classList.add("top-10");
+};
+
+type HideAlertType = (el: HTMLElement) => void;
+export const hideAlert: HideAlertType = (el) => {
+  el.classList.remove("top-10");
+  el.classList.add("-top-96");
+};
