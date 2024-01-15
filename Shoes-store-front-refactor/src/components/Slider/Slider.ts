@@ -54,7 +54,7 @@ export const SliderPage = () => {
       <!-- Item 1 -->
       <div class="hidden duration-700 ease-in-out" data-carousel-item>
         <img
-          src="/download.jpg"
+          src="/public/download.jpg"
           class="absolute left-1/2 block h-full w-full -translate-x-1/2"
           alt="..."
         />
@@ -65,7 +65,7 @@ export const SliderPage = () => {
         data-carousel-item="active"
       >
         <img
-          src="/Jordan.jpg"
+          src="/public/Jordan.jpg"
           class="absolute left-1/2 block h-full w-full -translate-x-1/2"
           alt="..."
         />
@@ -73,7 +73,7 @@ export const SliderPage = () => {
       <!-- Item 3 -->
       <div class="hidden duration-700 ease-in-out" data-carousel-item>
         <img
-          src="/Sweetsoles.jpg"
+          src="/public/Sweetsoles.jpg"
           class="absolute left-1/2 block h-full w-full -translate-x-1/2"
           alt="..."
         />

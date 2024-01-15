@@ -1,8 +1,9 @@
 import Navigo from "navigo";
 import { HomePage, Loading } from "./components/Home/Home";
 import { SignupPage } from "./components/Signup/Signup";
-import { LoginPage } from "./components/Login/Login";
+import LoginPage from "./components/Login/Login";
 import { SliderPage } from "./components/Slider/Slider";
+import ProductsPage from "./components/Products/Products";
 
 declare global {
   interface Window {
@@ -10,11 +11,11 @@ declare global {
   }
 }
 
+const router = new Navigo("/");
+
 window.navigate = (route: string) => {
   router.navigate(route);
 };
-
-const router = new Navigo("/");
 
 export const render = (content: string) => {
   const App = document.querySelector("#app");
@@ -42,7 +43,7 @@ router.on("/login", () => {
 });
 
 router.on("/products", () => {
-  render("Products");
+  render(ProductsPage());
 });
 
 router.on("/prduct/:id", (id) => {

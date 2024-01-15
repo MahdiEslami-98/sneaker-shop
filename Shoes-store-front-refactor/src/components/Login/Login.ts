@@ -77,7 +77,7 @@ window.showPassword = () => {
     : hideAndShow(showPassElem, hidePassElem);
 };
 
-export const LoginPage = () => {
+const LoginPage = () => {
   return `<div
   id="alert"
   class="absolute -top-96 left-1/2 mb-4 w-4/5 -translate-x-1/2 rounded-lg bg-red-50 p-4 text-sm text-red-800 transition-all"
@@ -154,7 +154,10 @@ export const LoginPage = () => {
     </button>
   </div>
   <div class="mt-6 flex w-full items-center justify-center">
-    <p class="cursor-pointer text-xl font-medium" id="signup" onclick="navigate('/signup')">Sign up</p>
+    <p class="mr-3">Don't have an account?</p>
+    <p class="cursor-pointer text-xl font-medium underline" id="signup" onclick="navigate('/signup')">Sign up</p>
   </div>
 </div>`;
 };
+
+export default LoginPage;
