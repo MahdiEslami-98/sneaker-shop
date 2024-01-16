@@ -1,9 +1,10 @@
-import Navigo from "navigo";
+import Navigo, { Match } from "navigo";
 import { HomePage, Loading } from "./components/Home/Home";
 import { SignupPage } from "./components/Signup/Signup";
 import LoginPage from "./components/Login/Login";
 import { SliderPage } from "./components/Slider/Slider";
 import ProductsPage from "./components/Products/Products";
+import ProductPage from "./components/product";
 
 declare global {
   interface Window {
@@ -17,10 +18,15 @@ window.navigate = (route: string) => {
   router.navigate(route);
 };
 
-export const render = (content: string) => {
+export const render = (content: string | HTMLElement) => {
   const App = document.querySelector("#app");
   if (!App) return;
-  App.innerHTML = content;
+  if (typeof content === "string") {
+    App.innerHTML = content;
+  } else {
+    App.innerHTML = "";
+    App.appendChild(content);
+  }
 };
 
 router.on("/", () => {
@@ -42,12 +48,16 @@ router.on("/login", () => {
   render(LoginPage());
 });
 
-router.on("/products", () => {
-  render(ProductsPage());
+router.on("/products", async () => {
+  const html = await ProductsPage();
+  if (!html) return;
+  render(html);
 });
 
-router.on("/prduct/:id", (id) => {
-  render("Product");
+router.on("/products/:id", async (id: Match | undefined) => {
+  const html = await ProductPage(id);
+  if (!html) return;
+  render(html);
 });
 
 router.resolve();

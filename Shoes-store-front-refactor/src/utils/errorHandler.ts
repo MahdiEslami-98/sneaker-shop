@@ -12,7 +12,9 @@ export const errorHandler = (e: AxiosError) => {
   if (!e.response) return;
   const er = e.response as ResponseType;
   if (er.status === 403) {
-    window.navigate("/login");
+    window.location.href = "/login";
+    // window.navigate("/login");
+    // window.history.pushState({}, "", "/login");
     window.sessionStorage.removeItem("token");
   } else if (Array.isArray(er.data.message)) {
     let html = "";
